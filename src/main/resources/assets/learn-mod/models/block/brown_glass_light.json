@@ -1,0 +1,7 @@
+{
+  "parent": "learn-mod:block/template_glass_light",
+  "textures": {
+	"1": "learn-mod:blocks/brown_glass_light_1",
+	"2": "learn-mod:blocks/brown_glass_light_2"
+  }
+}

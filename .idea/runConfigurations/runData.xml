@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="runData" type="Application" factoryName="Application" singleton="false">
+    <envs>
+      <env name="MOD_CLASSES" value="examplemod%%$PROJECT_DIR$/../Learn Mod\build\resources\main;examplemod%%$PROJECT_DIR$/../Learn Mod\build\classes\java\main" />
+      <env name="MCP_MAPPINGS" value="official_1.16.5" />
+      <env name="MCP_VERSION" value="20201102.104115" />
+      <env name="FORGE_VERSION" value="35.1.4" />
+      <env name="FORGE_GROUP" value="net.minecraftforge" />
+      <env name="target" value="fmluserdevdata" />
+      <env name="MC_VERSION" value="1.16.4" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="net.minecraftforge.userdev.LaunchTesting" />
+    <module name="Learn_Mod.main" />
+    <option name="PROGRAM_PARAMETERS" value="--mod examplemod --all --output &quot;C:\Users\Sehandu\AppData\Roaming\STM-Creations\Java Development\Minecraft Modding\Forge\Learn Mod\src\generated\resources&quot; --existing &quot;C:\Users\Sehandu\AppData\Roaming\STM-Creations\Java Development\Minecraft Modding\Forge\Learn Mod\src\main\resources&quot;" />
+    <option name="VM_PARAMETERS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks=":prepareRunData" externalProjectPath="$PROJECT_DIR$" />
+    </method>
+  </configuration>
+</component>

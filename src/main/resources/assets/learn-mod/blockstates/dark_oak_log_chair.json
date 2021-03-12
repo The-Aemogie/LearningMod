@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "learn-mod:block/dark_oak_log_chair"
+		},
+		"facing=east": {
+			"model": "learn-mod:block/dark_oak_log_chair",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "learn-mod:block/dark_oak_log_chair",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "learn-mod:block/dark_oak_log_chair",
+			"y": 270
+		}
+	}
+}
