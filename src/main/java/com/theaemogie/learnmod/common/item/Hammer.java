@@ -45,7 +45,7 @@ public class Hammer extends PickaxeItem {
 
         BlockPos offset;
 
-        player.sendMessage(new StringTextComponent(facing.toString()), player.getUUID());
+//        player.sendMessage(new StringTextComponent(facing.toString()), player.getUUID());
 
         switch (facing) {
             case NORTH:

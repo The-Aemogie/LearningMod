@@ -1,6 +1,7 @@
 package com.theaemogie.learnmod.common.entity;
 
 import com.theaemogie.learnmod.core.entitytypes.EntityTypesList;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,7 +30,7 @@ public class SeatEntity extends Entity {
         this.setPos(source.getX() + 0.5, source.getY() + yOffset, source.getZ() + 0.5);
     }
 
-    public static ActionResultType create(World world, BlockPos pos, double yOffset, PlayerEntity player) {
+    public static ActionResultType create( World world, BlockPos pos, double yOffset, PlayerEntity player) {
         if (!world.isClientSide()) {
             List<SeatEntity> seats = world.getEntitiesOfClass(SeatEntity.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 1.0, pos.getZ() + 1.0));
             if (seats.isEmpty()) {
