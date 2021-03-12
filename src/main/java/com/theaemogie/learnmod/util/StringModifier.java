@@ -9,11 +9,11 @@ public class StringModifier {
 
     /**
      * @param modifiers For possible modifiers, visit
-     * <a href=https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html> this webpage.</a>
+     *                  <a href=https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html> this webpage.</a>
      */
     public String modifyString(String input, int... modifiers) {
-        if (modifiers == null){
-            modifiers = new int[]{35,1};
+        if (modifiers == null) {
+            modifiers = new int[]{35, 1};
             System.out.println(input + " had no modifiers.");
         }
         ArrayList<String> modifier = new ArrayList<>();

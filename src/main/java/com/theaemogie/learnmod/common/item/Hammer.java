@@ -95,10 +95,9 @@ public class Hammer extends PickaxeItem {
     private boolean isDropped(World world, BlockPos pos, PlayerEntity player) {
         BlockState blockState = world.getBlockState(pos);
 
-        boolean canDrop = this.canHarvestBlock(player.getMainHandItem(),blockState);
+        boolean canDrop = this.canHarvestBlock(player.getMainHandItem(), blockState);
 //        canPlayerBreakBlockWhileHolding(blockState, world, pos, player);
-        boolean isDropped = canDrop && !player.isCreative();
-        return isDropped;
+        return canDrop && !player.isCreative();
     }
 
     private void breakBlock(BlockPos pos, BlockPos offset, PlayerEntity player) {

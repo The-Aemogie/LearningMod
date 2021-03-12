@@ -11,26 +11,31 @@ public class LearnModGroups {
         public GlassLightGroup(String label) {
             super(label);
         }
+
         @SuppressWarnings("NullableProblems")
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(BlockLists.MAGENTA_GLASS_LIGHT);
         }
     }
+
     public static class ChairGroup extends ItemGroup {
         public ChairGroup(String label) {
             super(label);
         }
+
         @SuppressWarnings("NullableProblems")
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(BlockLists.ACACIA_LOG_CHAIR);
         }
     }
+
     public static class MiscGroup extends ItemGroup {
         public MiscGroup(String label) {
             super(label);
         }
+
         @SuppressWarnings("NullableProblems")
         @Override
         public ItemStack makeIcon() {

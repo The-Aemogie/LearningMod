@@ -1,15 +1,11 @@
 package com.theaemogie.learnmod.core.entitytypes;
 
 import com.theaemogie.learnmod.References;
-import com.theaemogie.learnmod.common.entity.SeatEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = References.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EntityTypesRegister {

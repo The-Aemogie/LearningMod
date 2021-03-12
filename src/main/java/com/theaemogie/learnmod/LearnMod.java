@@ -34,6 +34,11 @@ public class LearnMod {
         bus.addListener(this::serverSetup);
     }
 
+    @SuppressWarnings("SameParameterValue")
+    private static String modifyString(String input, int... modifiers) {
+        return new StringModifier().modifyString(input, modifiers);
+    }
+
     private void clientSetup(final FMLClientSetupEvent event) {
         BlockLists.TRANSLUCENT_BLOCKS.forEach(block -> RenderTypeLookup.setRenderLayer(block, RenderType.translucent()));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesList.SEAT_ENTITY, SeatRenderer::new);
@@ -48,14 +53,9 @@ public class LearnMod {
         ).get());
     }
 
-    private void serverSetup(final FMLDedicatedServerSetupEvent event){
+    private void serverSetup(final FMLDedicatedServerSetupEvent event) {
         LOGGER.info(new LoggerFormat(
                 modifyString("Dedicated Server Setup!")
         ).get());
-    }
-
-    @SuppressWarnings("SameParameterValue")
-    private static String modifyString(String input, int... modifiers) {
-        return new StringModifier().modifyString(input, modifiers);
     }
 }

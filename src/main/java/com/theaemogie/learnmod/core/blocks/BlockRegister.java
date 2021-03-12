@@ -17,6 +17,7 @@ import java.util.Objects;
 
 /**
  * Class used for registering Blocks and relevant BlockItems.
+ *
  * @author <a href="mailto:theaemogie@gmail.com">Aemogie.</a>
  */
 @Mod.EventBusSubscriber(modid = References.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)

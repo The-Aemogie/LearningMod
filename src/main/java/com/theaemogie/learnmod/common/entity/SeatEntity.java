@@ -14,6 +14,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 
 import java.util.List;
 
+@SuppressWarnings("NullableProblems")
 public class SeatEntity extends Entity {
     private BlockPos source;
 
@@ -41,7 +42,8 @@ public class SeatEntity extends Entity {
     }
 
     @Override
-    protected void defineSynchedData() {}
+    protected void defineSynchedData() {
+    }
 
     @Override
     public void tick() {
@@ -57,10 +59,12 @@ public class SeatEntity extends Entity {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundNBT p_70037_1_) {}
+    protected void readAdditionalSaveData(CompoundNBT p_70037_1_) {
+    }
 
     @Override
-    protected void addAdditionalSaveData(CompoundNBT p_213281_1_) {}
+    protected void addAdditionalSaveData(CompoundNBT p_213281_1_) {
+    }
 
 
     @Override

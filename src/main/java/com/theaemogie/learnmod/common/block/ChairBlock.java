@@ -23,6 +23,7 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
+
 import java.util.Arrays;
 
 public class ChairBlock extends Block {
@@ -63,10 +64,11 @@ public class ChairBlock extends Block {
         }
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     private VoxelShape shapeBuilder(VoxelShape... shapes) {
-        return Arrays.stream(shapes).reduce((v1, v2) -> {
-            return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-        }).get();
+        return Arrays.stream(shapes).reduce(
+                (v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)
+        ).get();
     }
 
     @SuppressWarnings("NullableProblems")

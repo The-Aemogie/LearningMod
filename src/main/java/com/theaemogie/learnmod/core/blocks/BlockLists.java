@@ -23,11 +23,9 @@ public class BlockLists {
     //endregion
     private static final ItemGroup MISC_GROUP = References.MISC_GROUP;
     private static final ItemGroup GLASS_LIGHT_GROUP = References.GLASS_LIGHT_GROUP;
-    private static final ItemGroup CHAIR_GROUP = References.CHAIR_GROUP;
+    public static final Block WHITE_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.WHITE_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
 
     //region Adding the Blocks to the relevant ArrayList for registration. (Done using BlockRegister.register() method)
-
-    public static final Block WHITE_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.WHITE_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block ORANGE_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.ORANGE_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block MAGENTA_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.MAGENTA_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block LIGHT_BLUE_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.LIGHT_BLUE_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
@@ -43,7 +41,7 @@ public class BlockLists {
     public static final Block GREEN_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.GREEN_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block RED_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.RED_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block BLACK_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.BLACK_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
-
+    private static final ItemGroup CHAIR_GROUP = References.CHAIR_GROUP;
     public static final Block SPRUCE_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.SPRUCE_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block OAK_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.OAK_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block BIRCH_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.BIRCH_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);

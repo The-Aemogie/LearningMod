@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * Class used for storing variables that will be referenced often.
+ *
  * @author <a href="mailto:theaemogie@gmail.com?subject=%5Blearn-mod_1.0%5D"> Aemogie. </a>
  */
 public class References {
