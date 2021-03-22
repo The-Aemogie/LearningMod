@@ -1,3 +1,6 @@
 {
-	"parent": "learn-mod:block/dark_oak_log_chair"
+	"parent": "learn-mod:item/template_chair",
+	"textures": {
+		"material": "minecraft:block/dark_oak_log"
+	}
 }

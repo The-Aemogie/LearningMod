@@ -1,6 +1,0 @@
-{
-	"parent": "learn-mod:block/template_chair",
-	"textures": {
-		"material": "minecraft:block/stripped_oak_log"
-	}
-}

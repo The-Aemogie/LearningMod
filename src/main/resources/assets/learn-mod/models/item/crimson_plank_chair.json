@@ -1,3 +1,6 @@
 {
-	"parent": "learn-mod:block/crimson_plank_chair"
+	"parent": "learn-mod:item/template_chair",
+	"textures": {
+		"material": "minecraft:block/crimson_planks"
+	}
 }

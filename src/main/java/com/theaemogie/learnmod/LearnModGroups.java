@@ -7,8 +7,8 @@ import net.minecraft.item.ItemStack;
 
 public class LearnModGroups {
 
-    public static class GlassLightGroup extends ItemGroup {
-        public GlassLightGroup(String label) {
+    public static class LightingAndDecor extends ItemGroup {
+        public LightingAndDecor(String label) {
             super(label);
         }
 
@@ -19,8 +19,8 @@ public class LearnModGroups {
         }
     }
 
-    public static class ChairGroup extends ItemGroup {
-        public ChairGroup(String label) {
+    public static class Furniture extends ItemGroup {
+        public Furniture(String label) {
             super(label);
         }
 

@@ -1,3 +1,6 @@
 {
-	"parent": "learn-mod:block/acacia_plank_chair"
+	"parent": "learn-mod:item/template_chair",
+	"textures": {
+		"material": "minecraft:block/acacia_planks"
+	}
 }

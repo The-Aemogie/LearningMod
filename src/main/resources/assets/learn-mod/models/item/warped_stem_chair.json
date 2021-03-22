@@ -1,3 +1,6 @@
 {
-	"parent": "learn-mod:block/warped_stem_chair"
+	"parent": "learn-mod:item/template_chair",
+	"textures": {
+		"material": "minecraft:block/warped_stem"
+	}
 }

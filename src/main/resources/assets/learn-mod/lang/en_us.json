@@ -1,8 +1,8 @@
 {
 	"Category 1": "Item Groups",
 	"itemGroup.learn-mod.misc": "Miscellaneous",
-	"itemGroup.learn-mod.glass_lights": "Glass Lights",
-	"itemGroup.learn-mod.chairs": "Chairs",
+	"itemGroup.learn-mod.glass_lights": "Lighting/Decor",
+	"itemGroup.learn-mod.chairs": "Furniture",
 
 	"Category 2": "Blocks",
 	"block.learn-mod.white_glass_light": "White Glass Light",

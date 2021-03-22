@@ -18,23 +18,29 @@ import java.util.List;
 @SuppressWarnings("NullableProblems")
 public class SeatEntity extends Entity {
     private BlockPos source;
+    private BlockPos offset;
 
     public SeatEntity(World world) {
         super(EntityTypesList.SEAT_ENTITY, world);
 //        this.noClip = true;
     }
 
-    private SeatEntity(World world, BlockPos source, double yOffset) {
+    private SeatEntity(World world, BlockPos source, BlockPos offset) {
         this(world);
         this.source = source;
-        this.setPos(source.getX() + 0.5, source.getY() + yOffset, source.getZ() + 0.5);
+        this.offset = offset;
+        this.setPos(
+                this.source.getX() + this.offset.getX(),
+                this.source.getY() + this.offset.getY(),
+                this.source.getZ() + this.offset.getZ()
+        );
     }
 
-    public static ActionResultType create( World world, BlockPos pos, double yOffset, PlayerEntity player) {
+    public static ActionResultType create( World world, BlockPos pos, BlockPos offset, PlayerEntity player) {
         if (!world.isClientSide()) {
             List<SeatEntity> seats = world.getEntitiesOfClass(SeatEntity.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 1.0, pos.getZ() + 1.0));
             if (seats.isEmpty()) {
-                SeatEntity seat = new SeatEntity(world, pos, yOffset);
+                SeatEntity seat = new SeatEntity(world, pos, offset);
                 world.addFreshEntity(seat);
                 player.startRiding(seat, false);
             }

@@ -1,18 +1,21 @@
 {
 	"variants": {
-		"facing=north": {
-			"model": "learn-mod:block/stripped_dark_oak_log_chair"
+		"half=lower": {
+			"model": "learn-mod:block/stripped_dark_oak_log_chair_lower"
 		},
-		"facing=east": {
-			"model": "learn-mod:block/stripped_dark_oak_log_chair",
+		"facing=north,half=upper": {
+			"model": "learn-mod:block/stripped_dark_oak_log_chair_upper"
+		},
+		"facing=east,half=upper": {
+			"model": "learn-mod:block/stripped_dark_oak_log_chair_upper",
 			"y": 90
 		},
-		"facing=south": {
-			"model": "learn-mod:block/stripped_dark_oak_log_chair",
+		"facing=south,half=upper": {
+			"model": "learn-mod:block/stripped_dark_oak_log_chair_upper",
 			"y": 180
 		},
-		"facing=west": {
-			"model": "learn-mod:block/stripped_dark_oak_log_chair",
+		"facing=west,half=upper": {
+			"model": "learn-mod:block/stripped_dark_oak_log_chair_upper",
 			"y": 270
 		}
 	}

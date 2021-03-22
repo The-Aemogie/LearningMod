@@ -1,3 +1,6 @@
 {
-	"parent": "learn-mod:block/spruce_plank_chair"
+	"parent": "learn-mod:item/template_chair",
+	"textures": {
+		"material": "minecraft:block/spruce_planks"
+	}
 }

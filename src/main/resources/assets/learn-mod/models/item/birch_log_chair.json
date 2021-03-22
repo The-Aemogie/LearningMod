@@ -1,3 +1,6 @@
 {
-	"parent": "learn-mod:block/birch_log_chair"
+	"parent": "learn-mod:item/template_chair",
+	"textures": {
+		"material": "minecraft:block/birch_log"
+	}
 }
