@@ -1,7 +1,6 @@
 package com.theaemogie.learnmod.common.entity;
 
 import com.theaemogie.learnmod.core.entitytypes.EntityTypesList;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,27 +17,25 @@ import java.util.List;
 @SuppressWarnings("NullableProblems")
 public class SeatEntity extends Entity {
     private BlockPos source;
-    private BlockPos offset;
 
     public SeatEntity(World world) {
         super(EntityTypesList.SEAT_ENTITY, world);
 //        this.noClip = true;
     }
 
-    private SeatEntity(World world, BlockPos source, BlockPos offset) {
+    private SeatEntity(World world, BlockPos source, double offset) {
         this(world);
         this.source = source;
-        this.offset = offset;
         this.setPos(
-                this.source.getX() + this.offset.getX(),
-                this.source.getY() + this.offset.getY(),
-                this.source.getZ() + this.offset.getZ()
+                this.source.getX() + 0.5d,
+                this.source.getY() + offset,
+                this.source.getZ() + 0.5d
         );
     }
 
-    public static ActionResultType create( World world, BlockPos pos, BlockPos offset, PlayerEntity player) {
+    public static ActionResultType create(World world, BlockPos pos, double offset, PlayerEntity player) {
         if (!world.isClientSide()) {
-            List<SeatEntity> seats = world.getEntitiesOfClass(SeatEntity.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 1.0, pos.getZ() + 1.0));
+            List<SeatEntity> seats = world.getEntitiesOfClass(SeatEntity.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 2.0, pos.getZ() + 1.0));
             if (seats.isEmpty()) {
                 SeatEntity seat = new SeatEntity(world, pos, offset);
                 world.addFreshEntity(seat);
@@ -82,6 +79,7 @@ public class SeatEntity extends Entity {
     public BlockPos getSource() {
         return source;
     }
+
 
     @Override
     protected boolean canRide(Entity p_184228_1_) {
