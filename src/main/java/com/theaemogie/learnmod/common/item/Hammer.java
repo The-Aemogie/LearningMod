@@ -2,6 +2,7 @@ package com.theaemogie.learnmod.common.item;
 
 import com.theaemogie.learnmod.References;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
@@ -9,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
 public class Hammer extends PickaxeItem {
@@ -43,26 +43,51 @@ public class Hammer extends PickaxeItem {
 
         Direction facing = player.getDirection();
 
-        BlockPos offset;
+        BlockPos up = new BlockPos(0, 1, 0);
+        BlockPos down = new BlockPos(0, -1, 0);
+        ;
+        BlockPos left = null;
+        BlockPos right = null;
+        BlockPos upLeft = null;
+        BlockPos upRight = null;
+        BlockPos downLeft = null;
+        BlockPos downRight = null;
 
 //        player.sendMessage(new StringTextComponent(facing.toString()), player.getUUID());
 
         switch (facing) {
             case NORTH:
-                offset = new BlockPos(0, 0, -1);
-                breakBlock(pos, offset, player);
+                left = new BlockPos(-1, 0, 0);
+                upLeft = new BlockPos(-1, 1, 0);
+                downLeft = new BlockPos(-1, -1, 0);
+                right = new BlockPos(1, 0, 0);
+                upRight = new BlockPos(1, 1, 0);
+                downRight = new BlockPos(1, -1, 0);
+
                 break;
             case EAST:
-                offset = new BlockPos(1, 0, 0);
-                breakBlock(pos, offset, player);
+                left = new BlockPos(0, 0, -1);
+                upLeft = new BlockPos(0, 1, -1);
+                downLeft = new BlockPos(0, -1, -1);
+                right = new BlockPos(0, 0, 1);
+                upRight = new BlockPos(0, 1, 1);
+                downRight = new BlockPos(0, -1, 1);
                 break;
             case SOUTH:
-                offset = new BlockPos(0, 0, 1);
-                breakBlock(pos, offset, player);
+                left = new BlockPos(1, 0, 0);
+                upLeft = new BlockPos(1, 1, 0);
+                downLeft = new BlockPos(1, -1, 0);
+                right = new BlockPos(-1, 0, 0);
+                upRight = new BlockPos(-1, 1, 0);
+                downRight = new BlockPos(-1, -1, 0);
                 break;
             case WEST:
-                offset = new BlockPos(-1, 0, 0);
-                breakBlock(pos, offset, player);
+                left = new BlockPos(0, 0, 1);
+                upLeft = new BlockPos(0, 0, 1);
+                downLeft = new BlockPos(0, 0, 1);
+                right = new BlockPos(0, 0, -1);
+                upRight = new BlockPos(0, 0, -1);
+                downRight = new BlockPos(0, 0, -1);
                 break;
             default:
                 break;
@@ -88,7 +113,14 @@ public class Hammer extends PickaxeItem {
 //            player.sendMessage(new StringTextComponent("Case D"), player.getUniqueID());
 //        }
 //        itemstack.damageItem(1,player,playerEntity -> );
-
+        breakBlock(pos, up, player);
+        breakBlock(pos, down, player);
+        breakBlock(pos, left, player);
+        breakBlock(pos, upLeft, player);
+        breakBlock(pos, downLeft, player);
+        breakBlock(pos, right, player);
+        breakBlock(pos, upRight, player);
+        breakBlock(pos, downRight, player);
         return false;
     }
 
@@ -120,7 +152,7 @@ public class Hammer extends PickaxeItem {
 
         boolean isDropped = isDropped(world, nextPos, player);
 
-        if (!world.isClientSide()) {
+        if (!world.isClientSide() && next.getBlock() != Blocks.AIR) {
             world.destroyBlock(nextPos, isDropped, player);
         }
     }

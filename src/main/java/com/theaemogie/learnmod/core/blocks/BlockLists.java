@@ -17,8 +17,9 @@ public class BlockLists {
     public static final ArrayList<Block> OPAQUE_BLOCKS = new ArrayList<>();
     public static final ArrayList<Block> TRANSLUCENT_BLOCKS = new ArrayList<>();
     public static final ArrayList<BlockItem> BLOCK_ITEMS = new ArrayList<>();
-    private static final ItemGroup MISC_GROUP = References.MISC_GROUP;
 
+    private static final ItemGroup MISC_GROUP = References.MISC_GROUP;
+    private static final ItemGroup CHAIR_GROUP = References.CHAIR_GROUP;
     private static final ItemGroup GLASS_LIGHT_GROUP = References.GLASS_LIGHT_GROUP;
 
     public static final Block WHITE_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.WHITE_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
@@ -38,7 +39,6 @@ public class BlockLists {
     public static final Block RED_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.RED_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block BLACK_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.BLACK_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
 
-    private static final ItemGroup CHAIR_GROUP = References.CHAIR_GROUP;
 
     public static final Block OAK_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.OAK_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block SPRUCE_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.SPRUCE_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
@@ -46,22 +46,22 @@ public class BlockLists {
     public static final Block JUNGLE_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.JUNGLE_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block ACACIA_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.ACACIA_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block DARK_OAK_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.DARK_OAK_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
+    public static final Block CRIMSON_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.CRIMSON_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
+    public static final Block WARPED_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.WARPED_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block STRIPPED_OAK_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_OAK_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block STRIPPED_SPRUCE_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_SPRUCE_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block STRIPPED_BIRCH_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_BIRCH_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block STRIPPED_JUNGLE_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_JUNGLE_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block STRIPPED_ACACIA_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_ACACIA_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block STRIPPED_DARK_OAK_LOG_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_DARK_OAK_LOG_CHAIR, new ChairBlock(), CHAIR_GROUP);
+    public static final Block STRIPPED_CRIMSON_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_CRIMSON_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
+    public static final Block STRIPPED_WARPED_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_WARPED_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block OAK_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.OAK_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block SPRUCE_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.SPRUCE_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block BIRCH_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.BIRCH_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block JUNGLE_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.JUNGLE_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block ACACIA_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.ACACIA_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block DARK_OAK_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.DARK_OAK_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
-    public static final Block CRIMSON_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.CRIMSON_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
-    public static final Block STRIPPED_CRIMSON_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_CRIMSON_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block CRIMSON_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.CRIMSON_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
-    public static final Block WARPED_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.WARPED_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
-    public static final Block STRIPPED_WARPED_STEM_CHAIR = BlockRegister.register(BlockNames.ChairNames.STRIPPED_WARPED_STEM_CHAIR, new ChairBlock(), CHAIR_GROUP);
     public static final Block WARPED_PLANK_CHAIR = BlockRegister.register(BlockNames.ChairNames.WARPED_PLANK_CHAIR, new ChairBlock(), CHAIR_GROUP);
 }

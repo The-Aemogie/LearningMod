@@ -2,7 +2,6 @@ package com.theaemogie.learnmod.core.blocks;
 
 import com.theaemogie.learnmod.References;
 import com.theaemogie.learnmod.util.LoggerFormat;
-import com.theaemogie.learnmod.util.StringModifier;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,6 +13,8 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
+
+import static com.theaemogie.learnmod.util.StringModifier.modifyString;
 
 /**
  * Class used for registering Blocks and relevant BlockItems.
@@ -120,7 +121,4 @@ public class BlockRegister {
         BlockLists.BLOCK_ITEMS.clear();
     }
 
-    private static String modifyString(String input, int... modifiers) {
-        return new StringModifier().modifyString(input, modifiers);
-    }
 }

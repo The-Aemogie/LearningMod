@@ -7,6 +7,8 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 
 import java.util.stream.Stream;
 
+import static com.theaemogie.learnmod.util.VoxelUtils.shapeBuilder;
+
 @SuppressWarnings({"CodeBlock2Expr"})
 public class ChairVoxel {
     public static final VoxelShape COMMON_LOWER;
@@ -33,7 +35,7 @@ public class ChairVoxel {
         }).get();
     } //COMMON
 
-    public static class Occlusion {
+    public static class Collision {
         public static final VoxelShape NORTH_LOWER;
         public static final VoxelShape EAST_LOWER;
         public static final VoxelShape SOUTH_LOWER;
@@ -41,7 +43,46 @@ public class ChairVoxel {
         public static final VoxelShape NORTH_UPPER;
         public static final VoxelShape EAST_UPPER;
         public static final VoxelShape SOUTH_UPPER;
+        public static final VoxelShape WEST_UPPER;
+        static {
+            NORTH_LOWER = Block.box(0, 15, 12, 16, 32, 16);
+            NORTH_UPPER = Block.box(0, -1, 12, 16, 16, 16);
+        } //NORTH
 
+        static {
+            EAST_LOWER = Block.box(0, 15, 0, 4, 32, 16);
+            EAST_UPPER = Block.box(0, -1, 0, 4, 16, 16);
+        } //EAST
+
+        static {
+            SOUTH_LOWER = Block.box(0, 15, 0, 16, 32, 4);
+            SOUTH_UPPER = Block.box(0, -1, 0, 16, 16, 4);
+        } //SOUTH
+
+        static {
+            WEST_LOWER = Block.box(12, 15, 0, 16, 32, 16);
+            WEST_UPPER = Block.box(12, -1, 0, 16, 16, 16);
+        } //WEST
+
+        public static final VoxelShape NORTH_LOWER_FULL = shapeBuilder(COMMON_LOWER, NORTH_LOWER);
+        public static final VoxelShape EAST_LOWER_FULL = shapeBuilder(COMMON_LOWER, EAST_LOWER);
+        public static final VoxelShape SOUTH_LOWER_FULL = shapeBuilder(COMMON_LOWER, SOUTH_LOWER);
+        public static final VoxelShape WEST_LOWER_FULL = shapeBuilder(COMMON_LOWER, WEST_LOWER);
+        public static final VoxelShape NORTH_UPPER_FULL = shapeBuilder(COMMON_UPPER, NORTH_UPPER);
+        public static final VoxelShape EAST_UPPER_FULL = shapeBuilder(COMMON_UPPER, EAST_UPPER);
+        public static final VoxelShape SOUTH_UPPER_FULL = shapeBuilder(COMMON_UPPER, SOUTH_UPPER);
+        public static final VoxelShape WEST_UPPER_FULL = shapeBuilder(COMMON_UPPER, WEST_UPPER);
+    }
+
+    public static class Occlusion {
+
+        public static final VoxelShape NORTH_LOWER;
+        public static final VoxelShape EAST_LOWER;
+        public static final VoxelShape SOUTH_LOWER;
+        public static final VoxelShape WEST_LOWER;
+        public static final VoxelShape NORTH_UPPER;
+        public static final VoxelShape EAST_UPPER;
+        public static final VoxelShape SOUTH_UPPER;
         public static final VoxelShape WEST_UPPER;
 
         static {
@@ -159,36 +200,16 @@ public class ChairVoxel {
                 return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
             }).get();
         } //WEST
+
+        public static final VoxelShape NORTH_LOWER_FULL = shapeBuilder(COMMON_LOWER, NORTH_LOWER);
+        public static final VoxelShape EAST_LOWER_FULL = shapeBuilder(COMMON_LOWER, EAST_LOWER);
+        public static final VoxelShape SOUTH_LOWER_FULL = shapeBuilder(COMMON_LOWER, SOUTH_LOWER);
+        public static final VoxelShape WEST_LOWER_FULL = shapeBuilder(COMMON_LOWER, WEST_LOWER);
+        public static final VoxelShape NORTH_UPPER_FULL = shapeBuilder(COMMON_UPPER, NORTH_UPPER);
+        public static final VoxelShape EAST_UPPER_FULL = shapeBuilder(COMMON_UPPER, EAST_UPPER);
+        public static final VoxelShape SOUTH_UPPER_FULL = shapeBuilder(COMMON_UPPER, SOUTH_UPPER);
+        public static final VoxelShape WEST_UPPER_FULL = shapeBuilder(COMMON_UPPER, WEST_UPPER);
     }
 
-    public static class Collision {
-        public static final VoxelShape NORTH_LOWER;
-        public static final VoxelShape EAST_LOWER;
-        public static final VoxelShape SOUTH_LOWER;
-        public static final VoxelShape WEST_LOWER;
-        public static final VoxelShape NORTH_UPPER;
-        public static final VoxelShape EAST_UPPER;
-        public static final VoxelShape SOUTH_UPPER;
-        public static final VoxelShape WEST_UPPER;
 
-        static {
-            NORTH_LOWER = Block.box(0, 15, 12, 16, 32, 16);
-            NORTH_UPPER = Block.box(0, -1, 12, 16, 16, 16);
-        } //NORTH
-
-        static {
-            EAST_LOWER = Block.box(0, 15, 0, 4, 32, 16);
-            EAST_UPPER = Block.box(0, -1, 0, 4, 16, 16);
-        } //EAST
-
-        static {
-            SOUTH_LOWER = Block.box(0, 15, 0, 16, 32, 4);
-            SOUTH_UPPER = Block.box(0, -1, 0, 16, 16, 4);
-        } //SOUTH
-
-        static {
-            WEST_LOWER = Block.box(12, 15, 0, 16, 32, 16);
-            WEST_UPPER = Block.box(12, -1, 0, 16, 16, 16);
-        } //WEST
-    }
 }
