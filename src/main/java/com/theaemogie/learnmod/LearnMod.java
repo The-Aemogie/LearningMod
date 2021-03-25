@@ -4,7 +4,6 @@ import com.theaemogie.learnmod.client.renderer.entity.SeatRenderer;
 import com.theaemogie.learnmod.core.blocks.BlockLists;
 import com.theaemogie.learnmod.core.entitytypes.EntityTypesList;
 import com.theaemogie.learnmod.util.LoggerFormat;
-import com.theaemogie.learnmod.util.StringModifier;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +14,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.Logger;
+
+import static com.theaemogie.learnmod.util.StringModifier.modifyString;
 
 @Mod(References.MOD_ID)
 public class LearnMod {
@@ -32,11 +33,6 @@ public class LearnMod {
         bus.addListener(this::clientSetup);
         bus.addListener(this::commonSetup);
         bus.addListener(this::serverSetup);
-    }
-
-    @SuppressWarnings("SameParameterValue")
-    private static String modifyString(String input, int... modifiers) {
-        return new StringModifier().modifyString(input, modifiers);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
