@@ -56,7 +56,7 @@ public class BlockRegister {
      *                    }
      * @return {@link Block}
      */
-    public static Block register(ResourceLocation name, Block block, ItemGroup group, String render_mode) {
+    public static <T extends Block> T register(ResourceLocation name, T block, ItemGroup group, String render_mode) {
         return register(
                 name,
                 block,
@@ -73,7 +73,7 @@ public class BlockRegister {
      * @param blockItem {@link BlockItem} - BlockItem to be registered with the block.
      * @return {@link Block}
      */
-    public static Block register(ResourceLocation name, Block block, String render_mode, BlockItem blockItem) {
+    public static <T extends Block> T register(ResourceLocation name, T block, String render_mode, BlockItem blockItem) {
         block.setRegistryName(name);
         switch (render_mode) {
             case "translucent":

@@ -1,5 +1,6 @@
 package com.theaemogie.learnmod.common.block;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -16,16 +17,13 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class GlassLightBlock extends Block {
-
-
+public class GlassLightBlock extends ModifiableBlock {
+    
     private static final BooleanProperty LIT = BlockStateProperties.LIT;
     private static final BooleanProperty POWERED = BlockStateProperties.POWERED;
-
-
+    
     private static final float HARDNESS = 1.5f;
     private static final float RESISTANCE = 6.0f;
-
 
     public GlassLightBlock() {
         super(Properties.of(Material.GLASS)
@@ -39,7 +37,7 @@ public class GlassLightBlock extends Block {
                 .setValue(LIT, false)
                 .setValue(POWERED, false)
         );
-
+        
     }
 
 

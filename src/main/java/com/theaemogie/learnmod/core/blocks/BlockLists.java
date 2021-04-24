@@ -3,6 +3,7 @@ package com.theaemogie.learnmod.core.blocks;
 import com.theaemogie.learnmod.References;
 import com.theaemogie.learnmod.common.block.ChairBlock;
 import com.theaemogie.learnmod.common.block.GlassLightBlock;
+import com.theaemogie.learnmod.common.block.ModifiableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -29,7 +30,7 @@ public class BlockLists {
     public static final Block YELLOW_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.YELLOW_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block LIME_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.LIME_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block PINK_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.PINK_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
-    public static final Block GRAY_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.GRAY_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
+    public static final ModifiableBlock GRAY_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.GRAY_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block LIGHT_GRAY_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.LIGHT_GRAY_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block CYAN_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.CYAN_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
     public static final Block PURPLE_GLASS_LIGHT = BlockRegister.register(BlockNames.GlassLightName.PURPLE_GLASS_LIGHT, new GlassLightBlock(), GLASS_LIGHT_GROUP, "translucent");
