@@ -13,28 +13,20 @@ version = '1.0'
 group = 'com.theaemogie'
 archivesBaseName = 'learnmod'
 
+
 minecraft{
-	mappings channel: 'official', version: '1.16.5'
+	mappings channel: 'official', version: minecraftVersion
 	runs{ client{
-		workingDirectory project.file('run')
+		workingDirectory project.file('.run')
 		property 'forge.logging.markers', 'REGISTRIES'
 		property 'forge.logging.console.level', 'debug'
-		mods{ learnmod{ source sourceSets.main}}
+		mods{ learnmod{source sourceSets.main}}
 	}}
 }
 
-ext {
-	imguiVersion = '1.81.2'
-}
-
 dependencies{
-	minecraft 'net.minecraftforge:forge:1.16.5-36.1.0'
-	//region ImGui
-	implementation "io.github.spair:imgui-java-binding:$imguiVersion"
-	implementation "io.github.spair:imgui-java-lwjgl3:$imguiVersion"
-	implementation "io.github.spair:imgui-java-app:$imguiVersion"
-	implementation "io.github.spair:imgui-java-natives-windows:$imguiVersion"
-	//endregion
+	minecraft group: 'net.minecraftforge', name: 'forge', version: minecraftVersion + '-' + forgeVersion
+	implementation group: 'io.github.spair', name:'imgui-java-app', version: imguiVersion
 }
 jar{ manifest{ attributes([
 		"Specification-Title": "Learning Mod",
