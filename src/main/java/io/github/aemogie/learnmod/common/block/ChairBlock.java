@@ -34,6 +34,7 @@ public class ChairBlock extends AbstractSeatBlock implements IDoubleBlock {
 						.sound(SoundType.WOOD)
 						.strength(2.0f)
 						.harvestTool(ToolType.AXE),
+				"solid",
 				0.75d
 		);
 		this.registerDefaultState(this.stateDefinition.any()

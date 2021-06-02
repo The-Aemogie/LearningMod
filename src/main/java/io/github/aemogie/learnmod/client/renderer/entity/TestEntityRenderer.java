@@ -1,43 +1,36 @@
 package io.github.aemogie.learnmod.client.renderer.entity;
 
+import io.github.aemogie.learnmod.client.renderer.entity.models.CubeModel;
 import io.github.aemogie.learnmod.common.entity.TestEntity;
-import net.minecraft.client.renderer.culling.ClippingHelper;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 
 import static io.github.aemogie.learnmod.References.MOD_ID;
 
-public class TestEntityRenderer extends EntityRenderer<TestEntity> {
-	public final ResourceLocation TEST_SKIN_LOCATION = new ResourceLocation(MOD_ID, "light_source.png");
+@SuppressWarnings("NullableProblems")
+public class TestEntityRenderer extends EntityRenderer<TestEntity> implements IEntityRenderer<TestEntity, CubeModel> {
 	
-	public TestEntityRenderer(EntityRendererManager rendererManager) {
-		super(rendererManager);
-	}
+	public static final ResourceLocation TEXTURE = new ResourceLocation(MOD_ID, "textures/blocks/black_glass_light_1.png");
 	
-	@Override
-	public ResourceLocation getTextureLocation(TestEntity entity) {
-		return TEST_SKIN_LOCATION;
-	}
-	
-	@Override
-	protected int getBlockLightLevel(TestEntity entity, BlockPos pos) {
-		return 15;
-	}
-	
-	@Override
-	protected int getSkyLightLevel(TestEntity entity, BlockPos pos) {
-		return 15;
-	}
-	
-	@Override
-	public boolean shouldRender(TestEntity entity, ClippingHelper clippingHelper, double x, double y, double z) {
-		return true;
+	public TestEntityRenderer(EntityRendererManager renderManager) {
+		super(renderManager);
+		this.shadowRadius = 0.3f;
 	}
 	
 	@Override
 	protected boolean shouldShowName(TestEntity entity) {
 		return true;
+	}
+	
+	@Override
+	public CubeModel getModel() {
+		return new CubeModel();
+	}
+	
+	@Override
+	public ResourceLocation getTextureLocation(TestEntity entity) {
+		return TEXTURE;
 	}
 }

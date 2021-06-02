@@ -19,16 +19,16 @@ import net.minecraft.world.World;
  * @author <a href="mailto:theaemogie@gmail.com"> Aemogie. </a>
  */
 @SuppressWarnings("NullableProblems")
-public abstract class AbstractSeatBlock extends Block implements ISittable, IRotatable, IWaterLoggable {
+public abstract class AbstractSeatBlock extends ModBlock implements ISittable, IRotatable, IWaterLoggable {
 	
 	protected final double OFFSET;
 	
-	public AbstractSeatBlock(Properties properties, final double OFFSET) {
-		super(properties.noOcclusion());
+	public AbstractSeatBlock(Properties properties, String renderMode, final double offset) {
+		super(properties.noOcclusion(), renderMode);
 		this.registerDefaultState(this.stateDefinition.any()
 				.setValue(HORIZONTAL_FACING, Direction.NORTH)
 		);
-		this.OFFSET = OFFSET;
+		this.OFFSET = offset;
 	}
 	
 	@Override

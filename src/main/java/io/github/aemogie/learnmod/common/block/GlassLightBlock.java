@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 @SuppressWarnings({"deprecation", "NullableProblems"})
-public class GlassLightBlock extends ModifiableBlock {
+public class GlassLightBlock extends ModBlock {
 	
 	private static final BooleanProperty LIT = BlockStateProperties.LIT;
 	private static final BooleanProperty POWERED = BlockStateProperties.POWERED;
@@ -30,8 +30,8 @@ public class GlassLightBlock extends ModifiableBlock {
 				.sound(SoundType.GLASS)
 				.noOcclusion()
 				.strength(HARDNESS, RESISTANCE)
-				.harvestTool(ToolType.PICKAXE)
-		);
+				.harvestTool(ToolType.PICKAXE),
+				"translucent");
 		this.registerDefaultState(this.stateDefinition.any().setValue(LIT, false).setValue(POWERED, false));
 	}
 	
@@ -74,7 +74,7 @@ public class GlassLightBlock extends ModifiableBlock {
 			}
 			
 		} else if (state.getValue(POWERED).equals(true)) {
-			worldIn.setBlock(pos, this.getStateDefinition().any().setValue(LIT, true), 3);
+			worldIn.setBlock(pos, this.getStateDefinition().any().setValue(LIT, true),  3);
 		}
 		
 	}

@@ -10,7 +10,7 @@ apply plugin: 'net.minecraftforge.gradle'
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 version = '1.0'
-group = 'com.theaemogie'
+group = 'io.github.aemogie'
 archivesBaseName = 'learnmod'
 
 
