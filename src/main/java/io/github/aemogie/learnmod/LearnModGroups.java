@@ -1,7 +1,7 @@
 package io.github.aemogie.learnmod;
 
-import io.github.aemogie.learnmod.core.blocks.BlockLists;
-import io.github.aemogie.learnmod.core.items.ItemLists;
+import io.github.aemogie.learnmod.core.ModBlocks;
+import io.github.aemogie.learnmod.core.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -15,7 +15,7 @@ public class LearnModGroups {
 		@SuppressWarnings("NullableProblems")
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(BlockLists.MAGENTA_GLASS_LIGHT);
+			return new ItemStack(ModBlocks.MAGENTA_GLASS_LIGHT.get());
 		}
 	}
 	
@@ -27,7 +27,7 @@ public class LearnModGroups {
 		@SuppressWarnings("NullableProblems")
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(BlockLists.ACACIA_LOG_CHAIR);
+			return new ItemStack(ModBlocks.ACACIA_LOG_CHAIR.get());
 		}
 	}
 	
@@ -39,7 +39,7 @@ public class LearnModGroups {
 		@SuppressWarnings("NullableProblems")
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(ItemLists.OBSIDIAN_HAMMER);
+			return new ItemStack(ModItems.OBSIDIAN_HAMMER.get());
 		}
 	}
 }
