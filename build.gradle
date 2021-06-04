@@ -1,9 +1,10 @@
-buildscript{
-	repositories{
-		maven{ url = 'https://files.minecraftforge.net/maven' }
+//file:noinspection GroovyAssignabilityCheck
+buildscript {
+	repositories {
+		maven { url = 'https://files.minecraftforge.net/maven' }
 		mavenCentral()
 	}
-	dependencies{ classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true}
+	dependencies { classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true }
 }
 apply plugin: 'net.minecraftforge.gradle'
 
@@ -11,29 +12,35 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 version = '1.0'
 group = 'io.github.aemogie'
-archivesBaseName = 'learnmod'
+archivesBaseName = 'LearnMod'
 
 
-minecraft{
+minecraft {
 	mappings channel: 'official', version: minecraftVersion
-	runs{ client{
-		workingDirectory project.file('.run')
-		property 'forge.logging.markers', 'REGISTRIES'
-		property 'forge.logging.console.level', 'debug'
-		mods{ learnmod{source sourceSets.main}}
-	}}
+	runs {
+		client {
+			workingDirectory project.file('.run')
+			property 'forge.logging.markers', 'REGISTRIES'
+			property 'forge.logging.console.level', 'debug'
+			mods { learnmod { source sourceSets.main } }
+		}
+	}
 }
 
-dependencies{
+dependencies {
 	minecraft group: 'net.minecraftforge', name: 'forge', version: minecraftVersion + '-' + forgeVersion
-	implementation group: 'io.github.spair', name:'imgui-java-app', version: imguiVersion
+//	implementation group: 'io.github.spair', name:'imgui-java-app', version: imguiVersion
 }
-jar{ manifest{ attributes([
-		"Specification-Title": "Learning Mod",
-		"Specification-Vendor": "Aemogie.",
-		"Specification-Version": "1",
-		"Implementation-Title": project.name,
-		"Implementation-Version": "${archiveVersion}",
-		"Implementation-Vendor" :"Aemogie.",
-		"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-])}}
+jar {
+	manifest { //noinspection SpellCheckingInspection
+		attributes([
+				"Specification-Title"     : "Learning Mod",
+				"Specification-Vendor"    : "Aemogie.",
+				"Specification-Version"   : "1",
+				"Implementation-Title"    : project.name,
+				"Implementation-Version"  : "${archiveVersion}",
+				"Implementation-Vendor"   : "Aemogie.",
+				"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+		])
+	}
+}
