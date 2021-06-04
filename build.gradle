@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 buildscript{
 	repositories{
 		maven{ url = 'https://files.minecraftforge.net/maven' }
@@ -11,7 +12,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 version = '1.0'
 group = 'io.github.aemogie'
-archivesBaseName = 'learnmod'
+archivesBaseName = 'LearnMod'
 
 
 minecraft{
@@ -26,9 +27,10 @@ minecraft{
 
 dependencies{
 	minecraft group: 'net.minecraftforge', name: 'forge', version: minecraftVersion + '-' + forgeVersion
-	implementation group: 'io.github.spair', name:'imgui-java-app', version: imguiVersion
+//	implementation group: 'io.github.spair', name:'imgui-java-app', version: imguiVersion
 }
-jar{ manifest{ attributes([
+jar{ manifest{ //noinspection SpellCheckingInspection
+	attributes([
 		"Specification-Title": "Learning Mod",
 		"Specification-Vendor": "Aemogie.",
 		"Specification-Version": "1",
