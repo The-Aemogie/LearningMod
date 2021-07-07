@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
@@ -27,14 +28,14 @@ import net.minecraftforge.common.ToolType;
 @SuppressWarnings({"NullableProblems", "deprecation"})
 public class ChairBlock extends AbstractSeatBlock implements IDoubleBlock {
 	
-	public ChairBlock() {
+	public ChairBlock(RenderType renderMode) {
 		super(
 				Properties
 						.of(Material.WOOD)
 						.sound(SoundType.WOOD)
 						.strength(2.0f)
 						.harvestTool(ToolType.AXE),
-				"solid",
+				renderMode,
 				0.75d
 		);
 		this.registerDefaultState(this.stateDefinition.any()
@@ -50,7 +51,7 @@ public class ChairBlock extends AbstractSeatBlock implements IDoubleBlock {
 	}
 	
 	@Override
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getShape(BlockState state, IBlockReader block, BlockPos pos, ISelectionContext selectionContext) {
 		DoubleBlockHalf half = state.getValue(HALF);
 		Direction direction = state.getValue(HORIZONTAL_FACING);
 		if (half == DoubleBlockHalf.LOWER) {
@@ -115,7 +116,7 @@ public class ChairBlock extends AbstractSeatBlock implements IDoubleBlock {
 	}
 	
 	@Override
-	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult subBlockPos) {
+	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult rayTraceResult) {
 		return sit(world, pos, player, OFFSET, state.getValue(HALF));
 	}
 }

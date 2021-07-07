@@ -1,0 +1,74 @@
+{
+	"multipart": [
+		{
+			"when": {
+				"slice_0": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_1"
+			}
+		},
+		{
+			"when": {
+				"slice_1": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_2"
+			}
+		},
+		{
+			"when": {
+				"slice_2": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_1",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"slice_3": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_2",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"slice_4": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_1",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"slice_5": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_2",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"slice_6": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_1",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"slice_7": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice_2",
+				"y": 90
+			}
+		}
+	]
+}

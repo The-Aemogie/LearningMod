@@ -39,7 +39,7 @@ public class LearnModGroups {
 		@SuppressWarnings("NullableProblems")
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(ModItems.OBSIDIAN_HAMMER.get());
+			return new ItemStack(ModItems.PIZZA_SLICE.get());
 		}
 	}
 }

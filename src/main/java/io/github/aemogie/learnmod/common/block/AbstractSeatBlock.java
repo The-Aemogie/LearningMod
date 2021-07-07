@@ -5,6 +5,7 @@ import io.github.aemogie.learnmod.common.block.interfaces.ISittable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IWaterLoggable;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.StateContainer;
@@ -23,7 +24,7 @@ public abstract class AbstractSeatBlock extends ModBlock implements ISittable, I
 	
 	protected final double OFFSET;
 	
-	public AbstractSeatBlock(Properties properties, String renderMode, final double offset) {
+	public AbstractSeatBlock(Properties properties, RenderType renderMode, final double offset) {
 		super(properties.noOcclusion(), renderMode);
 		this.registerDefaultState(this.stateDefinition.any()
 				.setValue(HORIZONTAL_FACING, Direction.NORTH)
@@ -42,7 +43,7 @@ public abstract class AbstractSeatBlock extends ModBlock implements ISittable, I
 	}
 	
 	@Override
-	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult subBlockPos) {
+	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult rayTraceResult) {
 		return sit(world, pos, player, OFFSET);
 	}
 }

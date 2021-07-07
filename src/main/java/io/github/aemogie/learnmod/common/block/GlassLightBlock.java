@@ -16,6 +16,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
+import static net.minecraft.client.renderer.RenderType.translucent;
+
 @SuppressWarnings({"deprecation", "NullableProblems"})
 public class GlassLightBlock extends ModBlock {
 	
@@ -31,7 +33,7 @@ public class GlassLightBlock extends ModBlock {
 				.noOcclusion()
 				.strength(HARDNESS, RESISTANCE)
 				.harvestTool(ToolType.PICKAXE),
-				"translucent");
+				translucent());
 		this.registerDefaultState(this.stateDefinition.any().setValue(LIT, false).setValue(POWERED, false));
 	}
 	
@@ -48,8 +50,8 @@ public class GlassLightBlock extends ModBlock {
 	}
 	
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		toggleLit(state, worldIn, pos);
+	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult rayTraceResult) {
+		toggleLit(state, world, pos);
 		return ActionResultType.SUCCESS;
 	}
 	

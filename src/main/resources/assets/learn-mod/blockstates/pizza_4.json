@@ -1,0 +1,39 @@
+{
+	"multipart": [
+		{
+			"when": {
+				"slice_0": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice"
+			}
+		},
+		{
+			"when": {
+				"slice_1": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"slice_2": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"slice_3": "true"
+			},
+			"apply": {
+				"model": "learn-mod:block/pizza/slice",
+				"y": 90
+			}
+		}
+	]
+}

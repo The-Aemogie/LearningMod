@@ -3,20 +3,18 @@ package io.github.aemogie.learnmod.core;
 import io.github.aemogie.learnmod.common.block.ChairBlock;
 import io.github.aemogie.learnmod.common.block.GlassLightBlock;
 import io.github.aemogie.learnmod.common.block.ModBlock;
+import io.github.aemogie.learnmod.common.block.PizzaBlock;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static io.github.aemogie.learnmod.References.*;
-import static io.github.aemogie.learnmod.util.StringUtils.*;
 import static net.minecraft.client.renderer.RenderType.solid;
 import static net.minecraft.client.renderer.RenderTypeLookup.setRenderLayer;
 import static net.minecraftforge.registries.ForgeRegistries.BLOCKS;
@@ -26,30 +24,30 @@ public class ModBlocks {
 	
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(BLOCKS, MOD_ID);
 	
-	public static final RegistryObject<ModBlock> OAK_LOG_CHAIR = register("oak_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> SPRUCE_LOG_CHAIR = register("spruce_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> BIRCH_LOG_CHAIR = register("birch_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> JUNGLE_LOG_CHAIR = register("jungle_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> ACACIA_LOG_CHAIR = register("acacia_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> DARK_OAK_LOG_CHAIR = register("dark_oak_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> CRIMSON_STEM_CHAIR = register("crimson_stem_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> WARPED_STEM_CHAIR = register("warped_stem_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_OAK_LOG_CHAIR = register("stripped_oak_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_SPRUCE_LOG_CHAIR = register("stripped_spruce_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_BIRCH_LOG_CHAIR = register("stripped_birch_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_JUNGLE_LOG_CHAIR = register("stripped_jungle_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_ACACIA_LOG_CHAIR = register("stripped_acacia_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_DARK_OAK_LOG_CHAIR = register("stripped_dark_oak_log_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_CRIMSON_STEM_CHAIR = register("stripped_crimson_stem_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> STRIPPED_WARPED_STEM_CHAIR = register("stripped_warped_stem_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> OAK_PLANK_CHAIR = register("oak_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> SPRUCE_PLANK_CHAIR = register("spruce_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> BIRCH_PLANK_CHAIR = register("birch_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> JUNGLE_PLANK_CHAIR = register("jungle_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> ACACIA_PLANK_CHAIR = register("acacia_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> DARK_OAK_PLANK_CHAIR = register("dark_oak_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> CRIMSON_PLANK_CHAIR = register("crimson_plank_chair", new ChairBlock(), CHAIR_GROUP);
-	public static final RegistryObject<ModBlock> WARPED_PLANK_CHAIR = register("warped_plank_chair", new ChairBlock(), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> OAK_LOG_CHAIR = register("oak_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> SPRUCE_LOG_CHAIR = register("spruce_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> BIRCH_LOG_CHAIR = register("birch_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> JUNGLE_LOG_CHAIR = register("jungle_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> ACACIA_LOG_CHAIR = register("acacia_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> DARK_OAK_LOG_CHAIR = register("dark_oak_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> CRIMSON_STEM_CHAIR = register("crimson_stem_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> WARPED_STEM_CHAIR = register("warped_stem_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_OAK_LOG_CHAIR = register("stripped_oak_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_SPRUCE_LOG_CHAIR = register("stripped_spruce_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_BIRCH_LOG_CHAIR = register("stripped_birch_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_JUNGLE_LOG_CHAIR = register("stripped_jungle_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_ACACIA_LOG_CHAIR = register("stripped_acacia_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_DARK_OAK_LOG_CHAIR = register("stripped_dark_oak_log_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_CRIMSON_STEM_CHAIR = register("stripped_crimson_stem_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> STRIPPED_WARPED_STEM_CHAIR = register("stripped_warped_stem_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> OAK_PLANK_CHAIR = register("oak_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> SPRUCE_PLANK_CHAIR = register("spruce_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> BIRCH_PLANK_CHAIR = register("birch_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> JUNGLE_PLANK_CHAIR = register("jungle_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> ACACIA_PLANK_CHAIR = register("acacia_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> DARK_OAK_PLANK_CHAIR = register("dark_oak_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> CRIMSON_PLANK_CHAIR = register("crimson_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
+	public static final RegistryObject<ModBlock> WARPED_PLANK_CHAIR = register("warped_plank_chair", new ChairBlock(solid()), CHAIR_GROUP);
 	
 	public static final RegistryObject<ModBlock> WHITE_GLASS_LIGHT = register("white_glass_light", new GlassLightBlock(), GLASS_LIGHT_GROUP);
 	public static final RegistryObject<ModBlock> ORANGE_GLASS_LIGHT = register("orange_glass_light", new GlassLightBlock(), GLASS_LIGHT_GROUP);
@@ -67,6 +65,9 @@ public class ModBlocks {
 	public static final RegistryObject<ModBlock> GREEN_GLASS_LIGHT = register("green_glass_light", new GlassLightBlock(), GLASS_LIGHT_GROUP);
 	public static final RegistryObject<ModBlock> RED_GLASS_LIGHT = register("red_glass_light", new GlassLightBlock(), GLASS_LIGHT_GROUP);
 	public static final RegistryObject<ModBlock> BLACK_GLASS_LIGHT = register("black_glass_light", new GlassLightBlock(), GLASS_LIGHT_GROUP);
+	
+	public static final RegistryObject<ModBlock> PIZZA_4 = register("pizza_4", PizzaBlock.createPizza(4), MISC_GROUP);
+	public static final RegistryObject<ModBlock> PIZZA_8 = register("pizza_8", PizzaBlock.createPizza(8), MISC_GROUP);
 	
 	public static <T extends ModBlock> RegistryObject<T> register(String name, T block, ItemGroup group) {
 		return group != null ? register(name, block, new BlockItem(block, new Item.Properties().tab(group))) : register(name, block, () -> null);
@@ -94,19 +95,7 @@ public class ModBlocks {
 	public static void setupRenderers() {
 		for (RegistryObject<Block> block : REGISTRY.getEntries()) {
 			ModBlock modBlock = (ModBlock) block.get();
-			try {
-				RenderType renderType = (RenderType) RenderType.class.getDeclaredMethod(modBlock.RENDER_MODE).invoke(null);
-				setRenderLayer(modBlock, renderType);
-			} catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException error) {
-				LOGGER.error(new LoggerMessage(
-						fs("Unable to set render mode: \""),
-						fs(modBlock.RENDER_MODE, RED, BOLD),
-						fs("\". Defaulting to: \""),
-						fs("solid", CYAN, BOLD),
-						fs("\".")
-				));
-				setRenderLayer(modBlock, solid());
-			}
+			setRenderLayer(modBlock, modBlock.RENDER_MODE);
 		}
 	}
 }

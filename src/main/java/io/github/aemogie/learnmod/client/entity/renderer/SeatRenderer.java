@@ -1,4 +1,4 @@
-package io.github.aemogie.learnmod.client.renderer.entity;
+package io.github.aemogie.learnmod.client.entity.renderer;
 
 import io.github.aemogie.learnmod.common.entity.SeatEntity;
 import net.minecraft.client.renderer.entity.EntityRenderer;
