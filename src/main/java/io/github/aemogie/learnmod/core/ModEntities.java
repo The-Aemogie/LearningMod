@@ -31,7 +31,7 @@ public class ModEntities {
 	
 	public static final RegistryObject<ModEntityType<SeatEntity>> SEAT_ENTITY = register("seat_entity", Builder.of(SeatEntity.class, EntityClassification.MISC, SeatRenderer::new).sized(0.0f, 0.0f));
 	
-	public static final RegistryObject<ModEntityType<TestEntity>> TEST_ENTITY = register("test_entity", Builder.of(TestEntity.class, EntityClassification.MISC, manager -> new TestEntityRenderer<>(manager, TestModel::new)).sized(1.0f, 1.0f));
+	public static final RegistryObject<ModEntityType<TestEntity>> TEST_ENTITY = register("test_entity", Builder.of(TestEntity.class, EntityClassification.MISC, TestEntityRenderer::new).sized(0.6F, 1.95F));
 	
 	public static <T extends Entity> RegistryObject<ModEntityType<T>> register(String name, Builder<T> builder) {
 		return REGISTRY.register(name, () -> builder.build(name));
