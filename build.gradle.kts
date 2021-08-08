@@ -1,4 +1,6 @@
+import net.minecraftforge.gradle.common.util.ModConfig
 import net.minecraftforge.gradle.userdev.UserDevExtension
+import net.minecraftforge.gradle.userdev.DependencyManagementExtension
 
 val mappingsChannel: String by extra
 val mappingsVersion: String by extra
@@ -10,6 +12,7 @@ buildscript {
 }
 
 plugins {
+	idea
 	java
 	kotlin("jvm") version "1.5.21"
 }
@@ -21,6 +24,12 @@ apply {
 version = "1.0"
 group = "io.github.aemogie"
 
+val libs = ArrayList<Dependency>()
+
+configure<DependencyManagementExtension> {
+	libs.add(deobf("software.bernie.geckolib:geckolib-forge-1.16.5:3.0.43"))
+}
+
 configure<UserDevExtension> {
 	mappings(mappingsChannel, mappingsVersion)
 	accessTransformer(File("src/main/resources/META-INF/accessTransformer.cfg"))
@@ -29,23 +38,36 @@ configure<UserDevExtension> {
 			workingDirectory(project.file(".run"))
 			property("forge.logging.markers", "REGISTRIES")
 			property("forge.logging.console.level", "debug")
-			mods { sources.forEach { create("${project.name}-${it.name}") {source(it)} } }
+			mods(closureOf<NamedDomainObjectContainer<ModConfig>> {
+				create(project.name) {
+					source(sourceSets["main"])
+				}
+			})
 		}
 	}
 }
+repositories { maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/") }
 
 dependencies {
-	"minecraft"("net.minecraftforge:forge:$forgeVersion")
+	minecraft("net.minecraftforge:forge:$forgeVersion")
 	implementation("io.github.spair:imgui-java-app:+")
 	implementation(kotlin("stdlib-jdk8"))
+	libs.forEach{implementation(it)}
 }
 tasks.withType<Jar> {
 	manifest {
-		attributes["Specification-Title"] = "Learning Mod"
-		attributes["Specification-Vendor"] = "aemogie."
-		attributes["Specification-Version"] = project.version
-		attributes["Implementation-Title"] = project.name
-		attributes["Implementation-Version"] = archiveVersion
-		attributes["Implementation-Vendor"] = "aemogie."
+		attributes(
+			"Specification-Title" to "Learning Mod",
+			"Specification-Vendor" to "aemogie.",
+			"Specification-Version" to project.version,
+			"Implementation-Title" to project.name,
+			"Implementation-Version" to archiveVersion,
+			"Implementation-Vendor" to "aemogie.",
+		)
 	}
+	finalizedBy("reobfJar")
 }
+
+fun DependencyHandler.minecraft(
+	dependencyNotation: Any
+): Dependency? = add("minecraft", dependencyNotation)
