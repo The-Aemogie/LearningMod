@@ -23,12 +23,13 @@ group = "io.github.aemogie"
 
 configure<UserDevExtension> {
 	mappings(mappingsChannel, mappingsVersion)
+	accessTransformer(File("src/main/resources/META-INF/accessTransformer.cfg"))
 	runs {
 		create("client") {
 			workingDirectory(project.file(".run"))
 			property("forge.logging.markers", "REGISTRIES")
 			property("forge.logging.console.level", "debug")
-			mods { sources.forEach { create(it.name) {source(it)} } }
+			mods { sources.forEach { create("${project.name}-${it.name}") {source(it)} } }
 		}
 	}
 }

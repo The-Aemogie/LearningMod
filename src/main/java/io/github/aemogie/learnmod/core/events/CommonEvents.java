@@ -3,8 +3,6 @@ package io.github.aemogie.learnmod.core.events;
 import io.github.aemogie.learnmod.common.entity.ModEntityType;
 import io.github.aemogie.learnmod.core.ModEntities;
 import io.github.aemogie.learnmod.util.StringUtils;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -30,7 +28,7 @@ public class CommonEvents {
 	@SubscribeEvent
 	public static void entityAttributes(@Nonnull final EntityAttributeCreationEvent event) {
 		ModEntities.REGISTRY.getEntries().stream()
-		.filter(entityType -> LivingEntity.class.isAssignableFrom(((ModEntityType<? extends Entity>) entityType.get()).ENTITY_CLASS))
-		.forEach(entityType -> event.put((EntityType<LivingEntity>) entityType.get(), MobEntity.createMobAttributes().build()));
+		.filter(entityType -> LivingEntity.class.isAssignableFrom(((ModEntityType<?>) entityType.get()).ENTITY_CLASS))
+		.forEach(entityType -> event.put((ModEntityType<LivingEntity>) entityType.get(), MobEntity.createMobAttributes().build()));
 	}
 }

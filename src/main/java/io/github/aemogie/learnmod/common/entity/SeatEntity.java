@@ -19,8 +19,12 @@ import java.util.List;
 public class SeatEntity extends Entity {
 	private BlockPos source;
 	
-	private SeatEntity(World world, BlockPos source, double offset) {
+	private SeatEntity(World world) {
 		this(ModEntities.SEAT_ENTITY.get(), world);
+	}
+	
+	private SeatEntity(World world, BlockPos source, double offset) {
+		this(world);
 		this.source = source;
 		this.setPos(
 				this.source.getX() + 0.5d,
